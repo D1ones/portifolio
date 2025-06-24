@@ -1,215 +1,205 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <!-- Meta Tags Básicas -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <!-- SEO Primário -->
-    <title>Diones Sabino | Desenvolvedor Front-End | Portfólio</title>
-    <meta name="description" content="Portfólio profissional de Diones Sabino, desenvolvedor front-end com habilidades em HTML, CSS, JavaScript e React. Confira meus projetos e experiência.">
-    <meta name="keywords" content="desenvolvedor front-end, portfólio, HTML, CSS, JavaScript, React, Diones Sabino, programador, Alura, Oracle ONE">
-    <meta name="author" content="Diones Sabino">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://my-portifolio-diones.vercel.app/" />
-    
-    <!-- Open Graph / Redes Sociais -->
-    <meta property="og:title" content="Diones Sabino | Desenvolvedor Front-End | Portfólio">
-    <meta property="og:description" content="Portfólio profissional de Diones Sabino, desenvolvedor front-end com habilidades em HTML, CSS, JavaScript e React.">
-    <meta property="og:url" content="https://my-portifolio-diones.vercel.app/">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://my-portifolio-diones.vercel.app/assets/images.jpg">
-    <meta property="og:image:alt" content="Foto de perfil de Diones Sabino">
-    <meta property="og:site_name" content="Portfólio Diones Sabino">
-    <meta property="og:locale" content="pt_BR">
-    
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Diones Sabino | Desenvolvedor Front-End | Portfólio">
-    <meta name="twitter:description" content="Portfólio profissional de Diones Sabino, desenvolvedor front-end com habilidades em HTML, CSS, JavaScript e React.">
-    <meta name="twitter:image" content="https://my-portifolio-diones.vercel.app/assets/images.jpg">
-    <meta name="twitter:creator" content="@sabino_diones">
-    
-    <!-- Favicon e Ícones -->
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-    
-    <!-- Pré-carregamento de Recursos -->
-    <link rel="preload" href="style.css" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap" as="style">
-    <link rel="preload" href="script.js" as="script">
-    
-    <!-- Estilos e Fontes -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap" rel="stylesheet">
-    
-    <!-- Schema Markup para Rich Results -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Diones Sabino",
-      "url": "https://my-portifolio-diones.vercel.app/",
-      "sameAs": [
-        "https://github.com/D1ones",
-        "https://www.linkedin.com/in/diones-sabino-750236315/",
-        "https://www.instagram.com/sabino_diones/"
-      ],
-      "jobTitle": "Desenvolvedor Front-End",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Alura Latam - Oracle ONE"
-      }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diones Sabino | Front-End Developer | Portfólio</title>
+  <meta name="description" content="Portfólio de Diones Sabino, desenvolvedor front-end especializado em HTML, CSS, JavaScript e React. Veja projetos, habilidades e conquistas." />
+  <meta name="keywords" content="Diones Sabino, portfólio, front-end, desenvolvedor, HTML, CSS, JavaScript, React, projetos, web, landing page, e-commerce" />
+  <meta name="author" content="Diones Sabino" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://diones-sabino.dev/" />
+  <link rel="icon" href="assets/images.png" type="image/png">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://diones-sabino.dev/" />
+  <meta property="og:title" content="Diones Sabino | Front-End Developer" />
+  <meta property="og:description" content="Portfólio de Diones Sabino, desenvolvedor front-end. Veja projetos, habilidades e conquistas." />
+  <meta property="og:image" content="https://diones-sabino.dev/assets/images.png" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://diones-sabino.dev/" />
+  <meta name="twitter:title" content="Diones Sabino | Front-End Developer" />
+  <meta name="twitter:description" content="Portfólio de Diones Sabino, desenvolvedor front-end. Veja projetos, habilidades e conquistas." />
+  <meta name="twitter:image" content="https://diones-sabino.dev/assets/images.png" />
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Diones Sabino",
+    "url": "https://diones-sabino.dev/",
+    "image": "https://diones-sabino.dev/assets/images.png",
+    "sameAs": [
+      "https://github.com/D1ones",
+      "https://linkedin.com/in/diones-sabino-750236315"
+    ],
+    "jobTitle": "Front-End Developer",
+    "description": "Desenvolvedor front-end especializado em HTML, CSS, JavaScript e React. Veja projetos, habilidades e conquistas.",
+    "alumniOf": {
+      "@type": "Organization",
+      "name": "Alura/Oracle ONE"
     }
-    </script>
+  }
+  </script>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
-
 <body>
-    <div class="intro-animation">
-        <img src="assets/black-cat.png" alt="Logo animada" class="intro-animation__logo">
+  <button class="theme-toggle" aria-label="Alternar tema">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+  </button>
+
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">Diones Sabino</h1>
+      <nav class="nav" id="nav">
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <button class="theme-toggle" aria-label="Alternar tema">🌓</button>
-    <header class="header">
-        <img class="header__logo" src="assets/black-cat.png" alt="Logo">
-        <h1 class="header__title">Diones Sabino</h1>
-        <nav class="nav">
-            <ul class="nav__list">
-                <li class="nav__item"><a href="#sobre-mim">Sobre mim</a></li>
-                <li class="nav__item"><a href="#habilidades">Habilidades</a></li>
-                <li class="nav__item"><a href="#hobbies">Hobbies</a></li>
-                <li class="nav__item"><a href="#formacao">Formação</a></li>
-                <li class="nav__item"><a href="#projetos">Projetos</a></li>
-                <li class="nav__item"><a href="#contato">Contato</a></li>
-            </ul>
-            <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
-        </nav>
-    </header>
+  </header>
 
-    <main>
-        <section class="presentation">
-            <img class="presentation__photo" src="assets/images.png" alt="Foto de perfil">
-            <div class="presentation__container">
-                <h2 class="presentation__title">Olá, meu nome é Diones Sabino e construo páginas web</h2>
-                <p class="presentation__subtitle">Sou desenvolvedor front-end e atualmente estudante de programação, participando do projeto Oracle ONE na Alura Latam.</p>
-                <ul class="social-media">
-                    <a  href="https://github.com/D1ones"><img class="social-media__item" src="assets/download.png" alt="github"></a>
-                    <a  href="https://www.linkedin.com/in/diones-sabino-750236315/"><img class="social-media__item" src="assets/linkedin.png" alt="linkedin"></a>
-                    <a  href="https://www.instagram.com/sabino_diones/?next=%2F"><img class="social-media__item" src="assets/insta.png" alt="instagram"></a>
-                    <a  href="curriculo/diplomas.html"><img class="social-media__item" src="assets/curriculo (2).png" alt="diplomas"></a>
-                </ul>
-            </div>
-        </section>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-flex" data-aos="fade-up">
+        <div class="hero-photo" data-aos="zoom-in" data-aos-delay="200">
+          <img src="assets/images.png" alt="Foto de Diones Sabino" class="foto-pessoal">
+        </div>
+        <div class="hero-info">
+          <h2>Olá, sou <span>Diones Sabino</span></h2>
+          <p>Desenvolvedor Front-End apaixonado por criar experiências digitais modernas e funcionais.</p>
+          <div class="links">
+            <a href="https://github.com/D1ones" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/diones-sabino-750236315" target="_blank">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section class="about" id="sobre-mim">
-            <h2 class="about__title">Sobre mim</h2>
-            <p class="about__text">Sou estudante de programação no programa Oracle ONE da Alura, focado em desenvolvimento front-end. Possuo experiência em HTML, CSS e JavaScript, além de conhecimentos em bibliotecas e frameworks modernos como React. Estou comprometido com o aprendizado contínuo e a implementação de soluções práticas e criativas para o desenvolvimento de interfaces web funcionais e esteticamente agradáveis.</p>
-            <p class="about__text">Tenho habilidades de trabalho em equipe, resolução de problemas e adaptação a novas tecnologias, buscando sempre aprimorar a experiência do usuário e seguir as melhores práticas.</p>
-            
-        </section>
+    <section class="sobre" id="sobre" data-aos="fade-up">
+      <div class="container">
+        <h2>Sobre Mim</h2>
+        <p>Sou desenvolvedor front-end em formação pela Alura/Oracle ONE. Tenho habilidades sólidas com HTML, CSS, JavaScript e React. Busco construir soluções que unem estética e funcionalidade.</p>
+      </div>
+    </section>
 
-        <section class="skills" id="habilidades">
-            <h2 class="skills__title">Habilidades</h2>
-            <div class="skills__container">
-                <div class="skills__item">
-                    <img class="skills__icon" src="assets/htlm.png" alt="HTML">
-                    <p class="skills__name">HTML 5</p>
-                </div>
-                <div class="skills__item">
-                    <img class="skills__icon" src="assets/js_icon.png" alt="JavaScript">
-                    <p class="skills__name">JavaScript</p>
-                </div>
-                <div class="skills__item">
-                    <img class="skills__icon" src="assets/css_icon.png" alt="CSS">
-                    <p class="skills__name">CSS</p>
-                </div>
-            </div>
-        </section>
+    <section class="habilidades" id="habilidades" data-aos="fade-up">
+      <div class="container">
+        <h2>Habilidades</h2>
+        <ul class="skills-grid">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>Git/GitHub</li>
+        </ul>
+      </div>
+    </section>
 
-        <section class="hobbies" id="hobbies">
-            <h2 class="hobbies__title">Hobbies</h2>
-            <div class="hobbies__container">
-                <div class="hobbies__item">
-                    <img class="hobbies__icon" src="assets/headphones_icon-removebg-preview.png" alt="Ouvir música">
-                    <p class="hobbies__name">Ouvir música</p>
-                </div>
-                <div class="hobbies__item">
-                    <img class="hobbies__icon" src="assets/tv_icon.png" alt="Assistir séries">
-                    <p class="hobbies__name">Assistir séries</p>
-                </div>
-                <div class="hobbies__item">
-                    <img class="hobbies__icon" src="assets/forkspoon_icon.png" alt="Cozinhar">
-                    <p class="hobbies__name">Cozinhar</p>
-                </div>
-                <div class="hobbies__item">
-                    <img class="hobbies__icon" src="assets/camera_icon.png" alt="Fotografar">
-                    <p class="hobbies__name">Fotografar</p>
-                </div>
-            </div>
-        </section>
+    <section class="projetos" id="projetos" data-aos="fade-up">
+      <div class="container">
+        <h2>Projetos</h2>
+        <div class="cards">
+          <div class="card">
+            <img src="projetos/thumbs/aureola.avif" alt="Auréola Essencial" class="card-img">
+            <h3>Auréola Essencial</h3>
+            <p>Loja de velas artesanais com landing page minimalista e visual clean.</p>
+            <a href="projetos/aureola.html" target="_blank">Ver projeto</a>
+          </div>
+          <div class="card">
+            <img src="projetos/thumbs/aurora.avif" alt="Aurora Soluções Digitais" class="card-img">
+            <h3>Aurora Soluções Digitais</h3>
+            <p>Landing page para agência digital, com foco em soluções modernas e responsivas.</p>
+            <a href="projetos/Aurora.html" target="_blank">Ver projeto</a>
+          </div>
+          <div class="card">
+            <img src="projetos/thumbs/luna.avif" alt="Luna Chic" class="card-img">
+            <h3>Luna Chic</h3>
+            <p>E-commerce de bijuterias elegantes, com visual sofisticado e navegação intuitiva.</p>
+            <a href="projetos/luna.html" target="_blank">Ver projeto</a>
+          </div>
+          <div class="card">
+            <img src="projetos/thumbs/mandacaru.avif" alt="Mandacaru Vitrine" class="card-img">
+            <h3>Mandacaru Vitrine</h3>
+            <p>E-commerce fictício para loja de construção, totalmente responsivo.</p>
+            <a href="projetos/madacaru.html" target="_blank">Ver projeto</a>
+          </div>
+          <div class="card">
+            <img src="projetos/thumbs/stride.avif" alt="Stride" class="card-img">
+            <h3>Stride</h3>
+            <p>Landing page para startup de tecnologia, com foco em inovação e experiência do usuário.</p>
+            <a href="projetos/stride.html" target="_blank">Ver projeto</a>
+          </div>
+          <div class="card">
+            <img src="projetos/thumbs/lumo.avif" alt="Stride" class="card-img">
+            <h3>Lumo Midia</h3>
+            <p>Soluções web personalizadas que transformam visitantes em clientes e aumentam sua autoridade no mercado.</p>
+            <a href="https://www.lumo-midia.com.br" target="_blank">Ver projeto</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section class="education" id="formacao">
-            <h2 class="education__title">Formação Acadêmica</h2>
-            <div class="education__container">
-                <div class="education__item">
-                    <img class="education__icon" src="curriculo/Diones Sabino Da Silva - Curso Hábitos_ da produtividade às metas pessoais - Alura-1.png" alt="UFPR">
-                    <div>
-                        <h3 class="education__name">Curso Hábitos da Produtividade</h3>
-                        <p class="education__detail">2024 - Alura</p>
-                    </div>
-                </div>
-                <div class="education__item">
-                    <img class="education__icon" src="curriculo/Diones Sabino Da Silva - Curso Praticando lógica de programação_ Challenge Decodificador de Texto - Alura-1.png" alt="Alura">
-                    <div>
-                        <h3 class="education__name">Curso Lógica de Programaçãon</h3>
-                        <p class="education__detail">2024 - Alura</p>
-                    </div>
-                </div>
-                <div class="education__item">
-                    <img class="education__icon" src="curriculo/Diones Sabino Da Silva - Curso ChatGPT_ otimizando a qualidade dos resultados - Alura-1.png" alt="diploma">
-                    <div>
-                        <h3 class="education__name"> Curso ChatGPT</h3>
-                        <p class="education__detail"> 2024 - Alura</p>
-                    </div>
-                </div>
-            </div>
-           
-        </section>
-        <section class="education__more">
-            <h2 class="education__title">Outras formações</h2>
-            <p class="education__text">Além dos cursos mencionados, também participei de outros cursos e treinamentos que contribuíram para o meu desenvolvimento profissional.</p>
-            <p class="education__text">Estou sempre buscando aprender mais e me aprimorar na área de tecnologia.</p>
-            <p class="education__text">Para mais informações sobre minha formação, clique no botão abaixo.</p>
-          
-         <a class="education__text" href="curriculo/diplomas.html">Outras formações</a>
-        </section>
+    <!-- Destaque para diplomas -->
+    <section class="destaque-diplomas" data-aos="zoom-in">
+      <div class="container">
+        <div class="diploma-banner">
+          <h2>Veja meus certificados e conquistas!</h2>
+          <a href="curriculo/diplomas.html" class="btn-diploma" id="btnDiploma">Ver Diplomas</a>
+        </div>
+      </div>
+    </section>
 
+    <section class="contato" id="contato" data-aos="fade-up">
+      <div class="container">
+        <h2>Contato</h2>
+        <form class="contato-form" id="contatoForm" autocomplete="off">
+          <div class="form-group">
+            <input type="text" name="nome" placeholder="Seu nome" required data-anim-js>
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Seu e-mail" required data-anim-js>
+          </div>
+          <div class="form-group">
+            <textarea name="mensagem" placeholder="Sua mensagem" required data-anim-js></textarea>
+          </div>
+          <button type="submit" class="btn-enviar" id="btnEnviar">Enviar</button>
+          <div class="form-feedback" id="formFeedback"></div>
+        </form>
+      </div>
+    </section>
+  </main>
 
-        <section class="contact" id="contato">
-            <h2 class="contact__title">Contato</h2>
-            <p class="contact__text">Entre em contato comigo através dos meios abaixo:</p>
-            <ul class="contact__list">
-                <li class="contact__item">
-                    <strong>E-mail:</strong> <a href="mailto:diones.sabino25@gmail.com">diones.sabino@example.com</a>
-                </li>
-                <li class="contact__item">
-                    <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/diones-sabino-750236315/" target="_blank">linkedin.com/in/diones-sabino</a>
-                </li>
-                <li class="contact__item">
-                    <strong>GitHub:</strong> <a href="https://github.com/D1ones" target="_blank">github.com/D1ones</a>
-                </li>
-            </ul>
-        </section>
-    </main>
+  <footer>
+    <div class="container footer-contact">
+      <div class="footer-social">
+        <a href="mailto:diones.sabino25@gmail.com" title="E-mail" target="_blank" class="footer-icon" aria-label="E-mail">
+          <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6 12 13 2 6"/></svg>
+        </a>
+        <a href="https://github.com/D1ones" title="GitHub" target="_blank" class="footer-icon" aria-label="GitHub">
+          <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0 1 12 6.84c.85.004 1.7.12 2.5.34 1.9-1.33 2.74-1.05 2.74-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .26.18.57.69.47A10.01 10.01 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/diones-sabino-750236315" title="LinkedIn" target="_blank" class="footer-icon" aria-label="LinkedIn">
+          <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M16 8a4 4 0 0 1 4 4v6M8 10v6M8 10a4 4 0 0 1 8 0M8 16h0M16 16h0"/></svg>
+        </a>
+      </div>
+      <div class="footer-copy">
+        <p>&copy; 2025 Diones Sabino. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
 
-    <footer class="footer">
-        <p>© 2024 Diones Sabino. Todos os direitos reservados.</p>
-    </footer>
-    <script src="script.js"></script>
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>AOS.init();</script>
 </body>
 </html>
