@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essenza Vital - Clínica de Estética</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --essenza-gold: #D4AF37;
+            --essenza-rose: #F6E7E7;
+            --essenza-dark: #2D2A32;
+            --essenza-bg: #F9F7F6;
+            --essenza-accent: #A7C7B7;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+            background: var(--essenza-bg);
+            color: var(--essenza-dark);
+        }
+        
+        .hero-section {
+            background-image: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)), url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .gold-border { border-color: var(--essenza-gold); }
+        .gold-text { color: var(--essenza-gold); }
+        .gold-bg { background-color: var(--essenza-gold); }
+        .rose-bg { background-color: var(--essenza-rose); }
+        .accent-bg { background-color: var(--essenza-accent); }
+        .accent-text { color: var(--essenza-accent); }
+        .dark-bg { background-color: var(--essenza-dark); }
+        .dark-text { color: var(--essenza-dark); }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-carousel {
+            scroll-snap-type: x mandatory;
+        }
+        
+        .testimonial-slide {
+            scroll-snap-align: start;
+        }
+        
+        .team-card {
+            transition: all 0.3s ease;
+        }
+        
+        .team-card:hover {
+            transform: scale(1.03);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+        
+        .rose-bg {
+            background-color: #F3E9E9;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-700">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white bg-opacity-95 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <h1 class="text-2xl font-bold gold-text">ESSENZA VITAL</h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#" class="text-gray-700 hover:gold-text px-3 py-2 text-sm font-medium uppercase">Início</a>
+                        <a href="#" class="text-gray-700 hover:gold-text px-3 py-2 text-sm font-medium uppercase">Sobre</a>
+                        <a href="#" class="text-gray-700 hover:gold-text px-3 py-2 text-sm font-medium uppercase">Serviços</a>
+                        <a href="#" class="text-gray-700 hover:gold-text px-3 py-2 text-sm font-medium uppercase">Equipe</a>
+                        <a href="#" class="text-gray-700 hover:gold-text px-3 py-2 text-sm font-medium uppercase">Depoimentos</a>
+                        <a href="#" class="text-gray-700 hover:gold-text px-3 py-2 text-sm font-medium uppercase">Contato</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:gold-text">
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white pb-4">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
+                <a href="#" class="text-gray-700 hover:gold-text block px-3 py-2 text-sm font-medium uppercase">Início</a>
+                <a href="#" class="text-gray-700 hover:gold-text block px-3 py-2 text-sm font-medium uppercase">Sobre</a>
+                <a href="#" class="text-gray-700 hover:gold-text block px-3 py-2 text-sm font-medium uppercase">Serviços</a>
+                <a href="#" class="text-gray-700 hover:gold-text block px-3 py-2 text-sm font-medium uppercase">Equipe</a>
+                <a href="#" class="text-gray-700 hover:gold-text block px-3 py-2 text-sm font-medium uppercase">Depoimentos</a>
+                <a href="#" class="text-gray-700 hover:gold-text block px-3 py-2 text-sm font-medium uppercase">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Página Inicial -->
+    <section id="home" class="hero-section pt-20 min-h-screen flex items-center justify-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+            <div class="fade-in">
+                <h1 class="text-5xl md:text-7xl font-bold gold-text mb-6">BELEZA QUE VEM DE DENTRO</h1>
+                <p class="text-xl md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto">Cuidados estéticos personalizados que realçam sua essência e vitalidade</p>
+                <a href="#" class="gold-bg hover:bg-opacity-90 text-white font-medium py-3 px-8 rounded-full text-lg transition duration-300 inline-block border-2 gold-border">Nossos Tratamentos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner Rotativo -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative overflow-hidden h-64 rounded-lg shadow-lg fade-in">
+                <!-- Banner 1 -->
+                <div class="absolute inset-0 flex items-center justify-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1534258936925-c58bed479fcb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')">
+                    <div class="text-center bg-white bg-opacity-80 p-6 rounded">
+                        <h2 class="text-3xl font-bold gold-text mb-2">TRATAMENTOS PERSONALIZADOS</h2>
+                        <p class="text-gray-700 mb-4">Soluções exclusivas para sua pele</p>
+                        <a href="#" class="gold-bg hover:bg-opacity-90 text-white font-medium py-2 px-6 rounded-full text-sm transition duration-300 inline-block border gold-border">Saiba mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destaques -->
+    <section class="py-20 rose-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold gold-text mb-4">NA ESSENZA VITAL</h2>
+                <div class="w-24 h-1 gold-bg mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Destaque 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-md text-center fade-in">
+                    <div class="w-20 h-20 gold-bg text-white rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-spa text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold gold-text mb-4">TECNOLOGIA AVANÇADA</h3>
+                    <p class="text-gray-600">Equipamentos de última geração combinados com técnicas inovadoras para resultados superiores.</p>
+                </div>
+                
+                <!-- Destaque 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-md text-center fade-in">
+                    <div class="w-20 h-20 gold-bg text-white rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-user-md text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold gold-text mb-4">PROFISSIONAIS CERTIFICADOS</h3>
+                    <p class="text-gray-600">Equipe altamente qualificada e em constante atualização para oferecer o melhor atendimento.</p>
+                </div>
+                
+                <!-- Destaque 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-md text-center fade-in">
+                    <div class="w-20 h-20 gold-bg text-white rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-heart text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold gold-text mb-4">ABORDAGEM HOLÍSTICA</h3>
+                    <p class="text-gray-600">Cuidamos da sua beleza exterior enquanto promovemos seu bem-estar interior.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços em Destaque -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold gold-text mb-4">NOSSOS SERVIÇOS</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Descubra nossos tratamentos estéticos premium</p>
+                <div class="w-24 h-1 gold-bg mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Serviço 1 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 fade-in border-t-4 gold-border">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Limpeza de Pele" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold gold-text mb-2">LIMPEZA DE PELE PROFUNDA</h3>
+                        <p class="text-gray-600 mb-4">Desintoxicação e renovação celular com tecnologia de ponta para uma pele radiante e saudável.</p>
+                        <a href="#" class="gold-text hover:underline font-medium inline-flex items-center">
+                            Saiba mais <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Serviço 2 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 fade-in border-t-4 gold-border">
+                    <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80" alt="Botox" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold gold-text mb-2">TOXINA BOTULÍNICA</h3>
+                        <p class="text-gray-600 mb-4">Tratamento seguro e eficaz para suavizar linhas de expressão e prevenir o envelhecimento.</p>
+                        <a href="#" class="gold-text hover:underline font-medium inline-flex items-center">
+                            Saiba mais <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Serviço 3 -->
+                <div class="service-card bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 fade-in border-t-4 gold-border">
+                    <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Drenagem Linfática" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold gold-text mb-2">DRENAGEM LINFÁTICA</h3>
+                        <p class="text-gray-600 mb-4">Técnica manual especializada para redução de inchaço e melhora da circulação sanguínea.</p>
+                        <a href="#" class="gold-text hover:underline font-medium inline-flex items-center">
+                            Saiba mais <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 fade-in">
+                <a href="#" class="gold-bg hover:bg-opacity-90 text-white font-medium py-3 px-8 rounded-full text-lg transition duration-300 inline-block border-2 gold-border">
+                    Ver todos os serviços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Resumido -->
+    <section class="py-20 rose-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Clínica Essenza Vital" class="rounded-lg shadow-lg w-full h-auto">
+                </div>
+                <div class="fade-in">
+                    <h2 class="text-4xl font-bold gold-text mb-6">SOBRE A ESSENZA VITAL</h2>
+                    <p class="text-lg mb-6">Fundada em 2010, a Essenza Vital nasceu da paixão por cuidar da beleza que vem de dentro. Nossa missão é proporcionar tratamentos estéticos de excelência, aliando tecnologia avançada a um atendimento humanizado.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="flex items-center justify-center h-6 w-6 rounded-full gold-bg text-white">
+                                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <p class="ml-3 text-lg">Missão: Realçar a beleza natural com tratamentos personalizados</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="flex items-center justify-center h-6 w-6 rounded-full gold-bg text-white">
+                                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <p class="ml-3 text-lg">Visão: Ser referência em estética facial e corporal</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="flex items-center justify-center h-6 w-6 rounded-full gold-bg text-white">
+                                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <p class="ml-3 text-lg">Valores: Ética, excelência e cuidado integral</p>
+                        </div>
+                    </div>
+                    <a href="#" class="mt-8 inline-flex items-center gold-bg hover:bg-opacity-90 text-white font-medium py-3 px-6 rounded-full text-lg transition duration-300 border-2 gold-border">
+                        Nossa história <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold gold-text mb-4">DEPOIMENTOS</h2>
+                <div class="w-24 h-1 gold-bg mx-auto"></div>
+            </div>
+            
+            <div class="relative overflow-hidden fade-in">
+                <div class="testimonial-carousel flex overflow-x-auto pb-8 scrollbar-hide">
+                    <!-- Depoimento 1 -->
+                    <div class="testimonial-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
+                        <div class="rose-bg p-8 rounded-lg h-full">
+                            <div class="flex items-center mb-4">
+                                <div class="flex-shrink-0">
+                                    <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/32.jpg" alt="Cliente">
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium gold-text">Ana Clara</h4>
+                                    <div class="flex gold-text">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 italic">"A limpeza de pele na Essenza Vital transformou minha autoestima. A profissional foi extremamente cuidadosa e os resultados foram incríveis. Minha pele nunca esteve tão saudável!"</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Depoimento 2 -->
+                    <div class="testimonial-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
+                        <div class="rose-bg p-8 rounded-lg h-full">
+                            <div class="flex items-center mb-4">
+                                <div class="flex-shrink-0">
+                                    <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/men/54.jpg" alt="Cliente">
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium gold-text">Ricardo</h4>
+                                    <div class="flex gold-text">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 italic">"Fiz aplicação de botox na Essenza e fiquei impressionado com o resultado natural. A equipe é super profissional e o ambiente é impecável. Recomendo!"</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Depoimento 3 -->
+                    <div class="testimonial-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
+                        <div class="rose-bg p-8 rounded-lg h-full">
+                            <div class="flex items-center mb-4">
+                                <div class="flex-shrink-0">
+                                    <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente">
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium gold-text">Fernanda</h4>
+                                    <div class="flex gold-text">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 italic">"As drenagens linfáticas mudaram minha vida! Perdi medidas, diminui a retenção de líquido e ainda é um momento de relaxamento incrível. A Essenza Vital é diferenciada!"</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center mt-8 space-x-2">
+                    <button class="testimonial-dot w-3 h-3 rounded-full gold-bg opacity-50"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full gold-bg opacity-50"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full gold-bg"></button>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 fade-in">
+                <a href="#" class="gold-bg hover:bg-opacity-90 text-white font-medium py-3 px-8 rounded-full text-lg transition duration-300 inline-block border-2 gold-border">
+                    Ver mais depoimentos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Agendamento -->
+    <section class="py-20 gold-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="fade-in">
+                <h2 class="text-4xl font-bold mb-6">AGENDE SUA AVALIAÇÃO</h2>
+                <p class="text-xl mb-10 max-w-3xl mx-auto">Nossos especialistas estão prontos para criar um plano de tratamento personalizado para você</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#" class="bg-white hover:bg-gray-100 gold-text font-medium py-3 px-8 rounded-full text-lg transition duration-300 inline-block">
+                        <i class="fas fa-calendar-alt mr-2"></i> Agendar Consulta
+                    </a>
+                    <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20agendar%20uma%20avaliação%20na%20Essenza%20Vital" class="bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-8 rounded-full text-lg transition duration-300 inline-flex items-center">
+                        <i class="fab fa-whatsapp mr-2 text-xl"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="fade-in">
+                    <h3 class="text-xl font-semibold gold-text mb-4">ESSENZA VITAL</h3>
+                    <p class="mb-4 text-gray-300">Clínica de estética especializada em tratamentos faciais e corporais com excelência e cuidado individualizado.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white text-xl"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <h3 class="text-xl font-semibold gold-text mb-4">LINKS RÁPIDOS</h3>
+                    <div class="space-y-2">
+                        <a href="#" class="block text-gray-300 hover:text-white">Início</a>
+                        <a href="#" class="block text-gray-300 hover:text-white">Sobre Nós</a>
+                        <a href="#" class="block text-gray-300 hover:text-white">Serviços</a>
+                        <a href="#" class="block text-gray-300 hover:text-white">Equipe</a>
+                        <a href="#" class="block text-gray-300 hover:text-white">Contato</a>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <h3 class="text-xl font-semibold gold-text mb-4">CONTATO</h3>
+                    <div class="space-y-2 text-gray-300">
+                        <p><i class="fas fa-phone-alt mr-2"></i> (11) 99999-9999</p>
+                        <p><i class="fas fa-envelope mr-2"></i> contato@essenzavital.com</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i> Av. Paulista, 1000 - São Paulo/SP</p>
+                        <p><i class="fas fa-clock mr-2"></i> Seg-Sex: 9h-19h | Sáb: 9h-14h</p>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <h3 class="text-xl font-semibold gold-text mb-4">NEWSLETTER</h3>
+                    <p class="mb-4 text-gray-300">Receba novidades e promoções exclusivas.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Seu e-mail" class="px-4 py-2 w-full rounded-l focus:outline-none text-gray-700">
+                        <button type="submit" class="gold-bg hover:bg-opacity-90 px-4 py-2 rounded-r">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center fade-in">
+                <p class="text-gray-300">&copy; 2023 Essenza Vital. Todos os direitos reservados.</p>
+                <div class="mt-2 text-sm text-gray-400">
+                    <a href="#" class="hover:text-white">Política de Privacidade</a> | 
+                    <a href="#" class="hover:text-white">Termos de Serviço</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Voltar para Home (fixo no canto direito) -->
+    <a href="../index.html" title="Voltar para Home" class="fixed bottom-24 right-6 bg-[var(--essenza-gold)] hover:bg-[var(--essenza-dark)] text-white rounded-full p-4 shadow-lg flex items-center justify-center z-50 transition-all duration-300">
+        <i class="fas fa-home text-2xl"></i>
+    </a>
+
+    <!-- WhatsApp Float Button -->
+    <div class="fixed bottom-6 right-6 z-50 fade-in">
+        <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20tratamentos%20da%20Essenza%20Vital" class="bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition duration-300">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Testimonial carousel navigation
+        const carousel = document.querySelector('.testimonial-carousel');
+        const dots = document.querySelectorAll('.testimonial-dot');
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                // Update active dot
+                dots.forEach(d => d.classList.add('opacity-50'));
+                dot.classList.remove('opacity-50');
+                
+                // Scroll to corresponding testimonial
+                const testimonialWidth = document.querySelector('.testimonial-slide').offsetWidth;
+                carousel.scrollTo({
+                    left: testimonialWidth * index,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Fade-in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Initialize elements as invisible
+        fadeElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+        
+        // Check on load and scroll
+        window.addEventListener('load', fadeInOnScroll);
+        window.addEventListener('scroll', fadeInOnScroll);
+    </script>
+</body>
+</html>

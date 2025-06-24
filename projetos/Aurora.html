@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora Soluções Digitais</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #dc2626 0%, #f59e0b 50%, #facc15 100%);
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(220, 38, 38, 0.1), 0 10px 10px -5px rgba(250, 204, 21, 0.04);
+        }
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: scale(1.03);
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #22c55e;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-xl mr-3">
+                    AS
+                </div>
+                <span class="text-xl font-bold text-red-700">Aurora Soluções</span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-gray-700 hover:text-red-600">Home</a>
+                <a href="#about" class="nav-link text-gray-700 hover:text-orange-500">Quem Somos</a>
+                <a href="#services" class="nav-link text-gray-700 hover:text-yellow-500">Serviços</a>
+                <a href="#portfolio" class="nav-link text-gray-700 hover:text-green-500">Portfólio</a>
+                <a href="#contact" class="nav-link text-gray-700 hover:text-green-500">Contato</a>
+            </nav>
+            <div class="hidden md:block">
+                <a href="#contact" class="bg-red-600 hover:bg-orange-500 text-white px-6 py-2 rounded-full transition duration-300">
+                    Fale Conosco
+                </a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#home" class="py-2 text-gray-700 hover:text-red-600">Home</a>
+                <a href="#about" class="py-2 text-gray-700 hover:text-orange-500">Quem Somos</a>
+                <a href="#services" class="py-2 text-gray-700 hover:text-yellow-500">Serviços</a>
+                <a href="#portfolio" class="py-2 text-gray-700 hover:text-green-500">Portfólio</a>
+                <a href="#contact" class="py-2 text-gray-700 hover:text-green-500">Contato</a>
+                <a href="#contact" class="bg-red-600 hover:bg-orange-500 text-white px-6 py-2 rounded-full text-center transition duration-300 my-2">
+                    Fale Conosco
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="hero-gradient text-white py-20 md:py-32">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 animate-on-scroll">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        Transformando ideias em <span class="text-yellow-200">soluções digitais</span>
+                    </h1>
+                    <p class="text-xl text-yellow-100 mb-8">
+                        Criamos experiências digitais que impulsionam seu negócio e conectam você ao seu público.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#services" class="bg-white text-red-600 hover:bg-yellow-50 px-8 py-3 rounded-full text-center font-medium transition duration-300">
+                            Nossos Serviços
+                        </a>
+                        <a href="#contact" class="border-2 border-white text-white hover:bg-white hover:text-red-600 px-8 py-3 rounded-full text-center font-medium transition duration-300">
+                            Fale Conosco
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Soluções Digitais" 
+                         class="rounded-xl shadow-2xl w-full h-auto object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Quem Somos</h2>
+                <div class="w-20 h-1 bg-red-600 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    A Aurora Soluções Digitais nasceu da paixão por tecnologia e design, com o objetivo de criar soluções que realmente fazem a diferença.
+                </p>
+            </div>
+            <div class="flex flex-col md:flex-row items-center mb-16 animate-on-scroll">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Nossa Equipe" 
+                         class="rounded-xl shadow-lg w-full h-auto object-cover">
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Nossa História</h3>
+                    <p class="text-gray-600 mb-6">
+                        Fundada em 2015, a Aurora começou como uma pequena equipe de desenvolvedores e designers apaixonados por criar soluções digitais inovadoras. Ao longo dos anos, crescemos e nos tornamos referência no mercado, atendendo clientes de diversos segmentos.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Nosso diferencial está na abordagem personalizada para cada projeto, entendendo profundamente as necessidades de nossos clientes para entregar resultados que superam expectativas.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="bg-red-50 px-4 py-2 rounded-full text-red-700 font-medium">
+                            <i class="fas fa-check-circle mr-2"></i> 8+ anos de experiência
+                        </div>
+                        <div class="bg-red-50 px-4 py-2 rounded-full text-red-700 font-medium">
+                            <i class="fas fa-check-circle mr-2"></i> 150+ projetos
+                        </div>
+                        <div class="bg-red-50 px-4 py-2 rounded-full text-red-700 font-medium">
+                            <i class="fas fa-check-circle mr-2"></i> 50+ clientes
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 animate-on-scroll">
+                <div class="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                    <div class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center text-red-600 mb-6">
+                        <i class="fas fa-bullseye text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Missão</h3>
+                    <p class="text-gray-600">
+                        Desenvolver soluções digitais inovadoras que impulsionem os negócios de nossos clientes, através de tecnologia de ponta e design excepcional.
+                    </p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                    <div class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center text-red-600 mb-6">
+                        <i class="fas fa-eye text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Visão</h3>
+                    <p class="text-gray-600">
+                        Ser reconhecida como a principal referência em desenvolvimento de soluções digitais personalizadas na América Latina até 2030.
+                    </p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                    <div class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center text-red-600 mb-6">
+                        <i class="fas fa-heart text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Valores</h3>
+                    <p class="text-gray-600">
+                        Inovação, excelência, transparência, trabalho em equipe e compromisso com os resultados dos nossos clientes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nossos Serviços</h2>
+                <div class="w-20 h-1 bg-red-600 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Oferecemos soluções completas para sua presença digital, desde o planejamento até a implementação e manutenção.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 animate-on-scroll">
+                <!-- Service 1 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md transition duration-300 hover:border-red-500 border border-transparent">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center text-red-600 mb-6">
+                        <i class="fas fa-laptop-code text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Desenvolvimento Web</h3>
+                    <p class="text-gray-600 mb-4">
+                        Sites institucionais, landing pages, sistemas web e e-commerces personalizados com as melhores tecnologias do mercado.
+                    </p>
+                    <a href="#" class="text-red-600 font-medium inline-flex items-center">
+                        Saiba mais <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md transition duration-300 hover:border-red-500 border border-transparent">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center text-red-600 mb-6">
+                        <i class="fas fa-mobile-alt text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Aplicativos Móveis</h3>
+                    <p class="text-gray-600 mb-4">
+                        Desenvolvimento de aplicativos iOS e Android nativos ou híbridos, com foco em experiência do usuário e performance.
+                    </p>
+                    <a href="#" class="text-red-600 font-medium inline-flex items-center">
+                        Saiba mais <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md transition duration-300 hover:border-red-500 border border-transparent">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center text-red-600 mb-6">
+                        <i class="fas fa-paint-brush text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">UI/UX Design</h3>
+                    <p class="text-gray-600 mb-4">
+                        Criação de interfaces intuitivas e atraentes, com foco na experiência do usuário e conversão para seu negócio.
+                    </p>
+                    <a href="#" class="text-red-600 font-medium inline-flex items-center">
+                        Saiba mais <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <!-- Service 4 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md transition duration-300 hover:border-red-500 border border-transparent">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center text-red-600 mb-6">
+                        <i class="fas fa-search-dollar text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Marketing Digital</h3>
+                    <p class="text-gray-600 mb-4">
+                        Estratégias de SEO, mídias sociais, Google Ads e conteúdo para aumentar sua visibilidade e atrair mais clientes.
+                    </p>
+                    <a href="#" class="text-red-600 font-medium inline-flex items-center">
+                        Saiba mais <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <!-- Service 5 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md transition duration-300 hover:border-red-500 border border-transparent">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center text-red-600 mb-6">
+                        <i class="fas fa-server text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Hospedagem & Cloud</h3>
+                    <p class="text-gray-600 mb-4">
+                        Soluções de hospedagem segura e escalável, com monitoramento 24/7 e suporte técnico especializado.
+                    </p>
+                    <a href="#" class="text-red-600 font-medium inline-flex items-center">
+                        Saiba mais <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <!-- Service 6 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md transition duration-300 hover:border-red-500 border border-transparent">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center text-red-600 mb-6">
+                        <i class="fas fa-headset text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Suporte & Manutenção</h3>
+                    <p class="text-gray-600 mb-4">
+                        Atualizações, correções e melhorias contínuas para manter seu sistema sempre atualizado e seguro.
+                    </p>
+                    <a href="#" class="text-red-600 font-medium inline-flex items-center">
+                        Saiba mais <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nosso Portfólio</h2>
+                <div class="w-20 h-1 bg-red-600 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Alguns dos projetos que desenvolvemos com paixão e dedicação para nossos clientes.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 animate-on-scroll">
+                <!-- Project 1 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" 
+                         alt="E-commerce" 
+                         class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Loja Virtual Moda Fashion</h3>
+                        <p class="text-yellow-200 mb-4">E-commerce completo com integração de pagamentos e ERP</p>
+                        <a href="#" class="text-white font-medium inline-flex items-center">
+                            Ver detalhes <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1636&q=80" 
+                         alt="Aplicativo" 
+                         class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">App Delivery Fast</h3>
+                        <p class="text-yellow-200 mb-4">Aplicativo de delivery com geolocalização em tempo real</p>
+                        <a href="#" class="text-white font-medium inline-flex items-center">
+                            Ver detalhes <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" 
+                         alt="Sistema Web" 
+                         class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Sistema de Gestão Educacional</h3>
+                        <p class="text-yellow-200 mb-4">Plataforma completa para administração escolar</p>
+                        <a href="#" class="text-white font-medium inline-flex items-center">
+                            Ver detalhes <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-16 animate-on-scroll">
+                <a href="#" class="inline-flex items-center px-8 py-3 bg-red-600 hover:bg-red-700 text-white rounded-full font-medium transition duration-300">
+                    <i class="fas fa-images mr-3"></i> Ver todos os projetos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">O que dizem nossos clientes</h2>
+                <div class="w-20 h-1 bg-red-600 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    A satisfação dos nossos clientes é nossa maior recompensa.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 animate-on-scroll">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-sm border-t-4 border-red-500">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Cliente" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Ana Carolina</h4>
+                            <p class="text-red-600">CEO - Moda Fashion</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "A Aurora transformou completamente nosso e-commerce. As vendas aumentaram 300% em 6 meses e a experiência do usuário ficou incrível. Recomendo demais!"
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-sm border-t-4 border-orange-400">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Ricardo Almeida</h4>
+                            <p class="text-orange-500">Diretor - Educa+</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "O sistema desenvolvido pela Aurora revolucionou nossa gestão escolar. Agora temos tudo integrado em uma plataforma intuitiva e eficiente. Excelente atendimento!"
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-sm border-t-4 border-green-400">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Cliente" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Juliana Santos</h4>
+                            <p class="text-green-500">Gerente - Delivery Fast</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "Nosso aplicativo ficou exatamente como imaginávamos, com funcionalidades que superaram nossas expectativas. A equipe da Aurora é extremamente profissional e competente."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="py-16 bg-red-600 text-white">
+        <div class="container mx-auto px-4 text-center animate-on-scroll">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Pronto para transformar seu negócio?</h2>
+            <p class="text-xl text-yellow-100 mb-8 max-w-3xl mx-auto">
+                Entre em contato conosco e descubra como podemos ajudar sua empresa a alcançar novos patamares no mundo digital.
+            </p>
+            <a href="#contact" class="inline-block bg-white text-red-600 hover:bg-red-50 px-8 py-3 rounded-full font-bold transition duration-300">
+                Solicitar Orçamento
+            </a>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Entre em Contato</h2>
+                <div class="w-20 h-1 bg-red-600 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Tem alguma dúvida ou projeto em mente? Preencha o formulário ou use nossos canais diretos.
+                </p>
+            </div>
+            <div class="flex flex-col lg:flex-row gap-12 animate-on-scroll">
+                <div class="lg:w-1/2">
+                    <form id="contact-form" class="bg-gray-50 p-8 rounded-xl shadow-sm">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Nome Completo</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">E-mail</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Telefone</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                    <div id="form-success" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded-lg">
+                        <i class="fas fa-check-circle mr-2"></i> Mensagem enviada com sucesso! Entraremos em contato em breve.
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-sm h-full">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Informações de Contato</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center text-red-600 mr-4 mt-1">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Endereço</h4>
+                                    <p class="text-gray-600">Av. Paulista, 1000 - São Paulo/SP</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center text-red-600 mr-4 mt-1">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">E-mail</h4>
+                                    <p class="text-gray-600">contato@aurorasolucoes.com.br</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center text-red-600 mr-4 mt-1">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Telefone</h4>
+                                    <p class="text-gray-600">(11) 1234-5678</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center text-red-600 mr-4 mt-1">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Horário de Atendimento</h4>
+                                    <p class="text-gray-600">Segunda a Sexta: 9h às 18h</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h4 class="font-bold text-gray-800 mb-4">Redes Sociais</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 bg-red-600 hover:bg-red-700 text-white rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-red-600 hover:bg-red-700 text-white rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-red-600 hover:bg-red-700 text-white rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-red-600 hover:bg-red-700 text-white rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h4 class="font-bold text-gray-800 mb-4">Nosso Local</h4>
+                            <div class="rounded-xl overflow-hidden h-48">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.19772115371!2d-46.65867592468668!3d-23.56134786173201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%201000%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt-BR!2sbr!4v1689972542034!5m2!1spt-BR!2sbr" 
+                                        width="100%" 
+                                        height="100%" 
+                                        style="border:0;" 
+                                        allowfullscreen="" 
+                                        loading="lazy" 
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-lg mr-3">
+                            AS
+                        </div>
+                        <span class="text-xl font-bold">Aurora Soluções</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Transformando ideias em soluções digitais desde 2015. Nossa missão é ajudar empresas a crescer no mundo digital.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Links Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">Quem Somos</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">Serviços</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition duration-300">Portfólio</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Serviços</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Desenvolvimento Web</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Aplicativos Móveis</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">UI/UX Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Marketing Digital</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Hospedagem & Cloud</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">
+                        Assine nossa newsletter para receber novidades e dicas sobre o mundo digital.
+                    </p>
+                    <form class="flex">
+                        <input type="email" placeholder="Seu e-mail" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full">
+                        <button type="submit" class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-r-lg transition duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    &copy; 2023 Aurora Soluções Digitais. Todos os direitos reservados.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Voltar para Home (fixo no canto direito) -->
+    <a href="../index.html" title="Voltar para Home" class="fixed bottom-24 right-8 w-14 h-14 bg-red-600 hover:bg-orange-500 text-white rounded-full shadow-lg flex items-center justify-center z-50 transition duration-300">
+        <i class="fas fa-home text-2xl"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-red-600 hover:bg-red-700 text-white rounded-full shadow-lg flex items-center justify-center transition duration-300 opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+        
+        // Form Submission
+        const contactForm = document.getElementById('contact-form');
+        const formSuccess = document.getElementById('form-success');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Simulate form submission
+            setTimeout(() => {
+                contactForm.reset();
+                formSuccess.classList.remove('hidden');
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    formSuccess.classList.add('hidden');
+                }, 5000);
+            }, 1000);
+        });
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (mobileMenu.classList.contains('open')) {
+                        mobileMenu.classList.remove('open');
+                    }
+                }
+            });
+        });
+        
+        // Animation on scroll
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+        
+        const animateOnScroll = () => {
+            animateElements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+        
+        // Run once on page load
+        animateOnScroll();
+        
+        // Run on scroll
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>

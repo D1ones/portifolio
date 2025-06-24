@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stride Urbano - Tênis Urbanos de Alta Performance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Urbanist:wght@400;500;600&display=swap');
+        
+        body {
+            font-family: 'Urbanist', sans-serif;
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Barlow Condensed', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .hero-section {
+            background-image: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.7)), url('https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.05);
+        }
+        
+        .category-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+        
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .bg-gradient-dark {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+        }
+        
+        .border-accent {
+            border-color: #ff4d00;
+        }
+        
+        .text-accent {
+            color: #ff4d00;
+        }
+        
+        .bg-accent {
+            background-color: #ff4d00;
+        }
+        
+        .bg-accent:hover {
+            background-color: #e04400;
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+    <!-- Top Bar -->
+    <div class="bg-black text-gray-300 text-sm py-2 px-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex space-x-4">
+                <span><i class="fas fa-truck mr-1"></i> Frete grátis acima de R$300</span>
+                <span><i class="fas fa-exchange-alt mr-1"></i> Troca fácil</span>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#"><i class="fas fa-question-circle mr-1"></i> Ajuda</a>
+                <a href="#"><i class="fas fa-map-marker-alt mr-1"></i> Lojas</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-gray-900 bg-opacity-95 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html">
+                        <h1 class="text-2xl font-bold text-white">STRIDE URBANO</h1>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="index.html" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium uppercase">Home</a>
+                        <a href="#" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium uppercase">Masculino</a>
+                        <a href="#" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium uppercase">Feminino</a>
+                        <a href="#" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium uppercase">Lançamentos</a>
+                        <a href="#" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium uppercase">Ofertas</a>
+                        <a href="#" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium uppercase">Blog</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-300 hover:text-white">
+                        <i class="fas fa-search text-lg"></i>
+                    </button>
+                    <button class="text-gray-300 hover:text-white">
+                        <i class="fas fa-user text-lg"></i>
+                    </button>
+                    <button class="text-gray-300 hover:text-white relative">
+                        <i class="fas fa-shopping-bag text-lg"></i>
+                        <span class="absolute -top-2 -right-2 bg-accent text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                    </button>
+                    <div class="md:hidden">
+                        <button id="mobile-menu-button" class="text-gray-300 hover:text-white">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 pb-4 border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
+                <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 text-sm font-medium uppercase">Home</a>
+                <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 text-sm font-medium uppercase">Masculino</a>
+                <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 text-sm font-medium uppercase">Feminino</a>
+                <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 text-sm font-medium uppercase">Lançamentos</a>
+                <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 text-sm font-medium uppercase">Ofertas</a>
+                <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 text-sm font-medium uppercase">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="fade-in">
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">TÊNIS URBANOS <span class="text-accent">COM ATITUDE</span></h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto">Desenhados para as ruas, construídos para durar</p>
+                <a href="#" class="bg-accent hover:bg-opacity-90 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 inline-block uppercase tracking-wider">Ver Lançamentos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Banner -->
+    <section class="py-6 bg-gradient-dark border-y border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-center md:text-left mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold text-white uppercase">Black Friday Antecipada</h3>
+                    <p class="text-gray-400">Até 50% OFF em selecionados</p>
+                </div>
+                <div class="flex items-center">
+                    <div class="text-center px-4">
+                        <div class="text-2xl font-bold text-accent">05</div>
+                        <div class="text-xs text-gray-400">DIAS</div>
+                    </div>
+                    <div class="text-center px-4">
+                        <div class="text-2xl font-bold text-accent">12</div>
+                        <div class="text-xs text-gray-400">HORAS</div>
+                    </div>
+                    <div class="text-center px-4">
+                        <div class="text-2xl font-bold text-accent">45</div>
+                        <div class="text-xs text-gray-400">MIN</div>
+                    </div>
+                    <div class="text-center pl-4">
+                        <div class="text-2xl font-bold text-accent">22</div>
+                        <div class="text-xs text-gray-400">SEG</div>
+                    </div>
+                </div>
+                <a href="#" class="mt-4 md:mt-0 bg-accent hover:bg-opacity-90 text-white font-bold py-2 px-6 rounded-full text-sm transition duration-300 uppercase tracking-wider">Compre Agora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="py-16 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl font-bold text-white mb-4 uppercase">Explore Nossas Categorias</h2>
+                <div class="w-24 h-1 bg-accent mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Category 1 -->
+                <a href="#" class="category-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300 fade-in group">
+                    <div class="relative pt-[100%]">
+                        <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Corrida" class="absolute top-0 left-0 w-full h-full object-cover group-hover:opacity-90 transition duration-300">
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="text-lg font-bold text-white uppercase">Corrida</h3>
+                        <p class="text-gray-400 text-sm">Performance e conforto</p>
+                    </div>
+                </a>
+                
+                <!-- Category 2 -->
+                <a href="#" class="category-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300 fade-in group">
+                    <div class="relative pt-[100%]">
+                        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1025&q=80" alt="Casual" class="absolute top-0 left-0 w-full h-full object-cover group-hover:opacity-90 transition duration-300">
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="text-lg font-bold text-white uppercase">Casual</h3>
+                        <p class="text-gray-400 text-sm">Estilo urbano</p>
+                    </div>
+                </a>
+                
+                <!-- Category 3 -->
+                <a href="#" class="category-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300 fade-in group">
+                    <div class="relative pt-[100%]">
+                        <img src="https://img.irroba.com.br/fit-in/600x600/filters:fill(fff):quality(80)/mvpfitco/catalog/tenis-para-treino-de-cross-white-orange-50113-3.jpg" alt="Treino" class="absolute top-0 left-0 w-full h-full object-cover group-hover:opacity-90 transition duration-300">
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="text-lg font-bold text-white uppercase">Treino</h3>
+                        <p class="text-gray-400 text-sm">Performance máxima</p>
+                    </div>
+                </a>
+                
+                <!-- Category 4 -->
+                <a href="#" class="category-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300 fade-in group">
+                    <div class="relative pt-[100%]">
+                        <img src="https://cdn.awsli.com.br/600x700/1319/1319686/produto/95773301/232db1d82c.jpg" alt="Skate" class="absolute top-0 left-0 w-full h-full object-cover group-hover:opacity-90 transition duration-300">
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="text-lg font-bold text-white uppercase">Skate</h3>
+                        <p class="text-gray-400 text-sm">Durabilidade e estilo</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals -->
+    <section class="py-16 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center mb-8 fade-in">
+                <h2 class="text-3xl font-bold text-white uppercase">Lançamentos</h2>
+                <a href="#" class="text-accent hover:underline font-medium uppercase text-sm">Ver Todos</a>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Product 1 -->
+                <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300 fade-in group">
+                    <div class="relative pt-[100%]">
+                        <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Stride Runner X" class="absolute top-0 left-0 w-full h-full object-cover">
+                        <div class="absolute top-3 left-3 bg-accent text-white text-xs font-bold px-2 py-1 rounded uppercase">Novo</div>
+                        <div class="absolute top-0 right-0 p-2 opacity-0 group-hover:opacity-100 transition duration-300">
+                            <button class="bg-white text-gray-900 rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-gray-100">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 opacity-0 group-hover:opacity-100 transition duration-300">
+                            <button class="w-full bg-accent hover:bg-opacity-90 text-white font-bold py-2 rounded-full text-sm transition duration-300 uppercase tracking-wider">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Stride Runner X</h3>
+                                <p class="text-gray-400 text-sm">Corrida</p>
+                            </div>
+                            <div class="text-accent font-bold">R$ 499,90</div>
+                        </div>
+                        <div class="flex mt-3">
+                            <div class="flex text-yellow-400 text-xs">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="text-gray-400 ml-1">(42)</span>
+                            </div>
+                        </div>
+                        <div class="flex mt-3 space-x-1">
+                            <div class="w-4 h-4 rounded-full bg-red-500 border border-gray-600"></div>
+                            <div class="w-4 h-4 rounded-full bg-blue-500 border border-gray-600"></div>
+                            <div class="w-4 h-4 rounded-full bg-black border border-gray-600"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300 fade-in group">
+                    <div class="relative pt-[100%]">
+                        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1025&q=80" alt="Urban Classic" class="absolute top-0 left-0 w-full h-full object-cover">
+                        <div class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded uppercase">-30%</div>
+                        <div class="absolute top-0 right-0 p-2 opacity-0 group-hover:opacity-100 transition duration-300">
+                            <button class="bg-white text-gray-900 rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-gray-100">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 opacity-0 group-hover:opacity-100 transition duration-300">
+                            <button class="w-full bg-accent hover:bg-opacity-90 text-white font-bold py-2 rounded-full text-sm transition duration-300 uppercase tracking-wider">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Urban Classic</h3>
+                                <p class="text-gray-400 text-sm">Casual</p>
+                            </div>
+                            <div>
+                                <span class="text-gray-400 line-through text-sm">R$ 399,90</span>
+                                <div class="text-accent font-bold">R$ 279,90</div>
+                            </div>
+                        </div>
+                        <div class="flex mt-3">
+                            <div class="flex text-yellow-400 text-xs">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span class="text-gray-400 ml-1">(28)</span>
+                            </div>
+                        </div>
+                        <div class="flex mt-3 space-x-1">
+                            <div class="w-4 h-4 rounded-full bg-white border border-gray-600"></div>
+                            <div class="w-4 h-4 rounded-full bg-gray-400 border border-gray-600"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300 fade-in group">
+                    <div class="relative pt-[100%]">
+                        <img src="https://mediacdn.wtennis.com.br/catalog/product/cache/2/image/400x400/9df78eab33525d08d6e5fb8d27136e95/v/a/vans_ryland_ls_ag_13_1037398_35693_29_38357_3.jpg" alt="Power Flex" class="absolute top-0 left-0 w-full h-full object-cover">
+                        <div class="absolute top-0 right-0 p-2 opacity-0 group-hover:opacity-100 transition duration-300">
+                            <button class="bg-white text-gray-900 rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-gray-100">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 opacity-0 group-hover:opacity-100 transition duration-300">
+                            <button class="w-full bg-accent hover:bg-opacity-90 text-white font-bold py-2 rounded-full text-sm transition duration-300 uppercase tracking-wider">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Power Flex</h3>
+                                <p class="text-gray-400 text-sm">Treino</p>
+                            </div>
+                            <div class="text-accent font-bold">R$ 429,90</div>
+                        </div>
+                        <div class="flex mt-3">
+                            <div class="flex text-yellow-400 text-xs">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="text-gray-400 ml-1">(56)</span>
+                            </div>
+                        </div>
+                        <div class="flex mt-3 space-x-1">
+                            <div class="w-4 h-4 rounded-full bg-black border border-gray-600"></div>
+                            <div class="w-4 h-4 rounded-full bg-blue-800 border border-gray-600"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300 fade-in group">
+                    <div class="relative pt-[100%]">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3lJzWznwMLthwi-_AHJu8NuG1xqeVMXbtXtQRYszZX-FeVclVxmFrs3MYVLjpsL0fb5w&usqp=CAU" alt="Skate Pro" class="absolute top-0 left-0 w-full h-full object-cover">
+                        <div class="absolute top-3 left-3 bg-accent text-white text-xs font-bold px-2 py-1 rounded uppercase">Novo</div>
+                        <div class="absolute top-0 right-0 p-2 opacity-0 group-hover:opacity-100 transition duration-300">
+                            <button class="bg-white text-gray-900 rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-gray-100">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 opacity-0 group-hover:opacity-100 transition duration-300">
+                            <button class="w-full bg-accent hover:bg-opacity-90 text-white font-bold py-2 rounded-full text-sm transition duration-300 uppercase tracking-wider">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Skate Pro</h3>
+                                <p class="text-gray-400 text-sm">Skate</p>
+                            </div>
+                            <div class="text-accent font-bold">R$ 459,90</div>
+                        </div>
+                        <div class="flex mt-3">
+                            <div class="flex text-yellow-400 text-xs">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="text-gray-400 ml-1">(18)</span>
+                            </div>
+                        </div>
+                        <div class="flex mt-3 space-x-1">
+                            <div class="w-4 h-4 rounded-full bg-red-600 border border-gray-600"></div>
+                            <div class="w-4 h-4 rounded-full bg-black border border-gray-600"></div>
+                            <div class="w-4 h-4 rounded-full bg-white border border-gray-600"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Collection -->
+    <section class="py-16 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center mb-8 fade-in">
+                <h2 class="text-3xl font-bold text-white uppercase">Coleção Especial</h2>
+                <a href="#" class="text-accent hover:underline font-medium uppercase text-sm">Ver Coleção</a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="relative rounded-lg overflow-hidden shadow-lg fade-in h-96">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Coleção Limitada" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-8">
+                        <h3 class="text-2xl font-bold text-white uppercase mb-2">Edição Limitada</h3>
+                        <p class="text-gray-300 mb-4">Tênis exclusivos em colaboração com artistas urbanos</p>
+                        <a href="#" class="inline-block bg-accent hover:bg-opacity-90 text-white font-bold py-2 px-6 rounded-full text-sm transition duration-300 uppercase tracking-wider">Compre Agora</a>
+                    </div>
+                </div>
+                
+                <div class="relative rounded-lg overflow-hidden shadow-lg fade-in h-96">
+                    <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Tecnologia Inovadora" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-8">
+                        <h3 class="text-2xl font-bold text-white uppercase mb-2">Tecnologia Pro</h3>
+                        <p class="text-gray-300 mb-4">Amortecimento revolucionário para performance máxima</p>
+                        <a href="#" class="inline-block bg-accent hover:bg-opacity-90 text-white font-bold py-2 px-6 rounded-full text-sm transition duration-300 uppercase tracking-wider">Descubra</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Highlights -->
+    <section class="py-16 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center mb-8 fade-in">
+                <h2 class="text-3xl font-bold text-white uppercase">Blog Stride</h2>
+                <a href="#" class="text-accent hover:underline font-medium uppercase text-sm">Ver Todos</a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Post 1 -->
+                <a href="#" class="group fade-in">
+                    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300 group-hover:shadow-xl">
+                        <div class="relative pt-[60%]">
+                            <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Como escolher seu tênis" class="absolute top-0 left-0 w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-accent text-sm font-medium uppercase">Dicas</span>
+                            <h3 class="text-xl font-bold text-white mt-2 group-hover:text-accent transition duration-300">Como Escolher o Tênis Ideal Para Seu Tipo de Pisada</h3>
+                            <p class="text-gray-400 mt-3">Descubra como identificar seu tipo de pisada e selecionar o tênis que oferece melhor suporte e conforto.</p>
+                            <div class="flex items-center mt-4 text-gray-400 text-sm">
+                                <span>5 min de leitura</span>
+                                <span class="mx-2">•</span>
+                                <span>15 Nov 2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Post 2 -->
+                <a href="#" class="group fade-in">
+                    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300 group-hover:shadow-xl">
+                        <div class="relative pt-[60%]">
+                            <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1026&q=80" alt="Tendências urbanas" class="absolute top-0 left-0 w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-accent text-sm font-medium uppercase">Estilo</span>
+                            <h3 class="text-xl font-bold text-white mt-2 group-hover:text-accent transition duration-300">Tendências Urbanas: Como Combinar Seus Tênis em 2023</h3>
+                            <p class="text-gray-400 mt-3">As melhores combinações de looks urbanos com tênis para arrasar nas ruas neste ano.</p>
+                            <div class="flex items-center mt-4 text-gray-400 text-sm">
+                                <span>7 min de leitura</span>
+                                <span class="mx-2">•</span>
+                                <span>8 Nov 2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Post 3 -->
+                <a href="#" class="group fade-in">
+                    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300 group-hover:shadow-xl">
+                        <div class="relative pt-[60%]">
+                            <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="A importância do amortecimento" class="absolute top-0 left-0 w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-accent text-sm font-medium uppercase">Saúde</span>
+                            <h3 class="text-xl font-bold text-white mt-2 group-hover:text-accent transition duration-300">A Importância do Amortecimento Adequado em Tênis de Corrida</h3>
+                            <p class="text-gray-400 mt-3">Entenda como o amortecimento impacta seu desempenho e previne lesões.</p>
+                            <div class="flex items-center mt-4 text-gray-400 text-sm">
+                                <span>6 min de leitura</span>
+                                <span class="mx-2">•</span>
+                                <span>1 Nov 2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos (com filtros) -->
+<section id="produtos" class="py-16 bg-black">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row md:space-x-8">
+      <!-- Filtros -->
+      <aside class="md:w-1/4 mb-8 md:mb-0">
+        <div class="bg-gray-800 rounded-lg p-6 shadow-lg">
+          <h3 class="text-xl font-bold text-white mb-4 uppercase">Filtros</h3>
+          <div class="mb-4">
+            <label class="block text-gray-400 mb-2">Marca</label>
+            <select class="w-full bg-gray-900 text-white rounded p-2">
+              <option>Todas</option>
+              <option>Stride</option>
+              <option>Urban</option>
+              <option>SkatePro</option>
+            </select>
+          </div>
+          <div class="mb-4">
+            <label class="block text-gray-400 mb-2">Numeração</label>
+            <input type="text" placeholder="Ex: 38, 39, 40" class="w-full bg-gray-900 text-white rounded p-2">
+          </div>
+          <div class="mb-4">
+            <label class="block text-gray-400 mb-2">Gênero</label>
+            <select class="w-full bg-gray-900 text-white rounded p-2">
+              <option>Todos</option>
+              <option>Masculino</option>
+              <option>Feminino</option>
+              <option>Unissex</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-gray-400 mb-2">Preço</label>
+            <input type="range" min="100" max="1000" class="w-full accent-accent">
+            <div class="flex justify-between text-xs text-gray-400">
+              <span>R$100</span><span>R$1000</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <!-- Grid de Produtos -->
+      <div class="md:w-3/4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Produto exemplo -->
+        <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg group transition duration-300 product-card">
+          <div class="relative pt-[100%]">
+            <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?auto=format&fit=crop&w=1470&q=80" alt="Produto" class="absolute top-0 left-0 w-full h-full object-cover">
+            <div class="absolute top-3 left-3 bg-accent text-white text-xs font-bold px-2 py-1 rounded uppercase">Novo</div>
+            <div class="absolute top-0 right-0 p-2 opacity-0 group-hover:opacity-100 transition duration-300">
+              <button class="bg-white text-gray-900 rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-gray-100">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-bold text-white">Stride Runner X</h3>
+            <p class="text-gray-400 text-sm">Corrida</p>
+            <div class="text-accent font-bold mt-2">R$ 499,90</div>
+            <button class="mt-4 w-full bg-accent hover:bg-opacity-90 text-white font-bold py-2 rounded-full text-sm transition duration-300 uppercase tracking-wider">Comprar</button>
+          </div>
+        </div>
+        <!-- Repita para mais produtos -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Página Individual do Produto -->
+<section id="produto" class="py-16 bg-gray-900">
+  <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row gap-12">
+    <!-- Galeria -->
+    <div class="md:w-1/2">
+      <div class="relative rounded-lg overflow-hidden shadow-lg">
+        <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?auto=format&fit=crop&w=1470&q=80" alt="Produto" class="w-full h-96 object-cover cursor-zoom-in transition-transform duration-300 hover:scale-105">
+      </div>
+      <div class="flex mt-4 space-x-2">
+        <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?auto=format&fit=crop&w=400&q=80" class="w-16 h-16 object-cover rounded cursor-pointer border-2 border-accent">
+        <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=400&q=80" class="w-16 h-16 object-cover rounded cursor-pointer">
+      </div>
+    </div>
+    <!-- Detalhes -->
+    <div class="md:w-1/2">
+      <h2 class="text-3xl font-bold text-white mb-2">Stride Runner X</h2>
+      <div class="flex items-center mb-4">
+        <div class="flex text-yellow-400 text-lg">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+        </div>
+        <span class="text-gray-400 ml-2">(42 avaliações)</span>
+      </div>
+      <div class="text-accent text-2xl font-bold mb-4">R$ 499,90</div>
+      <p class="text-gray-300 mb-6">Tênis de corrida com design urbano, leveza e amortecimento de última geração.</p>
+      <div class="mb-4">
+        <label class="block text-gray-400 mb-2">Numeração</label>
+        <select class="w-32 bg-gray-900 text-white rounded p-2">
+          <option>38</option><option>39</option><option>40</option><option>41</option>
+        </select>
+      </div>
+      <button class="w-full bg-accent hover:bg-opacity-90 text-white font-bold py-3 rounded-full text-lg transition duration-300 uppercase tracking-wider mb-4">Comprar</button>
+      <div class="text-sm text-gray-400">Frete grátis acima de R$300</div>
+      <!-- Avaliações -->
+      <div class="mt-8">
+        <h3 class="text-lg font-bold text-white mb-2">Avaliações</h3>
+        <div class="bg-gray-800 rounded p-4 mb-2">
+          <div class="flex items-center mb-1">
+            <span class="font-bold text-white mr-2">Lucas</span>
+            <div class="flex text-yellow-400 text-xs">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+            </div>
+          </div>
+          <p class="text-gray-300 text-sm">Muito confortável e estiloso!</p>
+        </div>
+        <!-- Mais avaliações... -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Carrinho e Checkout -->
+<section id="carrinho" class="py-16 bg-black">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-white mb-8 uppercase">Carrinho</h2>
+    <div class="bg-gray-800 rounded-lg shadow-lg p-6 mb-8">
+      <div class="flex justify-between items-center mb-4">
+        <div class="flex items-center">
+          <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?auto=format&fit=crop&w=100&q=80" class="w-20 h-20 object-cover rounded mr-4">
+          <div>
+            <h3 class="text-white font-bold">Stride Runner X</h3>
+            <span class="text-gray-400 text-sm">Numeração: 40</span>
+          </div>
+        </div>
+        <div class="text-accent font-bold">R$ 499,90</div>
+      </div>
+      <!-- Cupom -->
+      <div class="flex items-center mb-4">
+        <input type="text" placeholder="Cupom de desconto" class="bg-gray-900 text-white rounded p-2 mr-2">
+        <button class="bg-accent text-white px-4 py-2 rounded font-bold">Aplicar</button>
+      </div>
+      <!-- Frete -->
+      <div class="flex items-center mb-4">
+        <input type="text" placeholder="CEP para calcular frete" class="bg-gray-900 text-white rounded p-2 mr-2">
+        <button class="bg-accent text-white px-4 py-2 rounded font-bold">Calcular</button>
+      </div>
+      <div class="flex justify-between text-white font-bold text-lg mt-6">
+        <span>Total</span>
+        <span>R$ 499,90</span>
+      </div>
+      <button class="mt-6 w-full bg-accent hover:bg-opacity-90 text-white font-bold py-3 rounded-full text-lg transition duration-300 uppercase tracking-wider">Finalizar Compra</button>
+    </div>
+  </div>
+</section>
+
+<!-- Sobre -->
+<section id="sobre" class="py-16 bg-gray-900">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold text-white mb-4 uppercase">Sobre a Stride Urbano</h2>
+    <div class="w-24 h-1 bg-accent mx-auto mb-6"></div>
+    <p class="text-gray-300 text-lg mb-4">A Stride Urbano nasceu da paixão pela cultura das ruas e pelo desejo de criar tênis que unem estilo, conforto e performance. Nossa missão é inspirar atitude e autenticidade, trazendo inovação e design ousado para quem vive a cidade intensamente.</p>
+    <p class="text-gray-400">Moda urbana, tecnologia e sustentabilidade caminham juntos em cada coleção. Seja para correr, treinar, andar de skate ou compor o look do dia, nossos produtos são feitos para quem não para.</p>
+  </div>
+</section>
+
+<!-- Área do Cliente -->
+<section id="cliente" class="py-16 bg-black">
+  <div class="max-w-3xl mx-auto px-4">
+    <div class="bg-gray-800 rounded-lg shadow-lg p-8">
+      <h2 class="text-2xl font-bold text-white mb-6 uppercase">Área do Cliente</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Login -->
+        <div>
+          <h3 class="text-lg font-bold text-white mb-2">Login</h3>
+          <input type="email" placeholder="E-mail" class="w-full bg-gray-900 text-white rounded p-2 mb-2">
+          <input type="password" placeholder="Senha" class="w-full bg-gray-900 text-white rounded p-2 mb-2">
+          <button class="w-full bg-accent text-white font-bold py-2 rounded mb-2">Entrar</button>
+          <a href="#" class="text-accent text-sm hover:underline">Esqueci minha senha</a>
+        </div>
+        <!-- Cadastro -->
+        <div>
+          <h3 class="text-lg font-bold text-white mb-2">Criar Conta</h3>
+          <input type="text" placeholder="Nome completo" class="w-full bg-gray-900 text-white rounded p-2 mb-2">
+          <input type="email" placeholder="E-mail" class="w-full bg-gray-900 text-white rounded p-2 mb-2">
+          <input type="password" placeholder="Senha" class="w-full bg-gray-900 text-white rounded p-2 mb-2">
+          <button class="w-full bg-accent text-white font-bold py-2 rounded">Cadastrar</button>
+        </div>
+      </div>
+      <!-- Pedidos -->
+      <div class="mt-8">
+        <h3 class="text-lg font-bold text-white mb-2">Meus Pedidos</h3>
+        <div class="bg-gray-900 rounded p-4 text-gray-300">
+          <p>Nenhum pedido encontrado.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 border-t border-gray-800 py-10 mt-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div>
+      <h3 class="text-white font-bold text-lg mb-4">Stride Urbano</h3>
+      <p class="text-gray-400 text-sm mb-4">Tênis urbanos de alta performance para quem vive a cidade.</p>
+      <div class="flex space-x-4">
+        <a href="#" class="text-accent text-2xl"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="text-accent text-2xl"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="text-accent text-2xl"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+    <div>
+      <h4 class="text-white font-bold mb-2">Institucional</h4>
+      <ul class="text-gray-400 text-sm space-y-1">
+        <li><a href="#sobre" class="hover:text-accent">Sobre</a></li>
+        <li><a href="#" class="hover:text-accent">Blog</a></li>
+        <li><a href="#" class="hover:text-accent">Lojas</a></li>
+        <li><a href="#" class="hover:text-accent">Trabalhe Conosco</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-white font-bold mb-2">Ajuda</h4>
+      <ul class="text-gray-400 text-sm space-y-1">
+        <li><a href="#" class="hover:text-accent">Trocas e Devoluções</a></li>
+        <li><a href="#" class="hover:text-accent">Política de Privacidade</a></li>
+        <li><a href="#" class="hover:text-accent">Entrega</a></li>
+        <li><a href="#" class="hover:text-accent">Contato</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-white font-bold mb-2">Minha Conta</h4>
+      <ul class="text-gray-400 text-sm space-y-1">
+        <li><a href="#cliente" class="hover:text-accent">Login</a></li>
+        <li><a href="#cliente" class="hover:text-accent">Meus Pedidos</a></li>
+        <li><a href="#carrinho" class="hover:text-accent">Carrinho</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="text-center text-gray-500 text-xs mt-8">
+    © 2025 Stride Urbano. Todos os direitos reservados.
+  </div>
+</footer>
+
+<!-- Botão Voltar para Home (fixo no canto direito) -->
+<a href="../index.html" title="Voltar para Home" class="fixed bottom-8 right-8 w-14 h-14 bg-accent hover:bg-orange-500 text-white rounded-full shadow-lg flex items-center justify-center z-50 transition duration-300">
+    <i class="fas fa-home text-2xl"></i>
+</a>
+
+</body>
+</html>

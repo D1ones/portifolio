@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auréola Essencial - Velas Aromáticas Artesanais</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="/Lumo.mmlogo-removebg-preview.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-section {
+            background-image: linear-gradient(rgba(245, 245, 240, 0.7), rgba(245, 245, 240, 0.7)), url('https://images.unsplash.com/photo-1585771724684-38269d6639fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-carousel {
+            scroll-snap-type: x mandatory;
+        }
+        
+        .testimonial-slide {
+            scroll-snap-align: start;
+        }
+        
+        .scent-card {
+            transition: all 0.3s ease;
+        }
+        
+        .scent-card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-[#F5F5F0] text-[#5A5A5A]">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white bg-opacity-90 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <h1 class="text-3xl font-semibold text-[#8A9A5B]">Auréola Essencial</h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#home" class="text-[#8A9A5B] hover:text-[#6B7F4A] px-3 py-2 text-lg font-medium">Início</a>
+                        <a href="#about" class="text-[#8A9A5B] hover:text-[#6B7F4A] px-3 py-2 text-lg font-medium">Sobre</a>
+                        <a href="#products" class="text-[#8A9A5B] hover:text-[#6B7F4A] px-3 py-2 text-lg font-medium">Produtos</a>
+                        <a href="#testimonials" class="text-[#8A9A5B] hover:text-[#6B7F4A] px-3 py-2 text-lg font-medium">Depoimentos</a>
+                        <a href="#scents" class="text-[#8A9A5B] hover:text-[#6B7F4A] px-3 py-2 text-lg font-medium">Ambientações</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-[#8A9A5B] hover:text-[#6B7F4A]">
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white pb-4">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
+                <a href="#home" class="text-[#8A9A5B] hover:text-[#6B7F4A] block px-3 py-2 text-base font-medium">Início</a>
+                <a href="#about" class="text-[#8A9A5B] hover:text-[#6B7F4A] block px-3 py-2 text-base font-medium">Sobre</a>
+                <a href="#products" class="text-[#8A9A5B] hover:text-[#6B7F4A] block px-3 py-2 text-base font-medium">Produtos</a>
+                <a href="#testimonials" class="text-[#8A9A5B] hover:text-[#6B7F4A] block px-3 py-2 text-base font-medium">Depoimentos</a>
+                <a href="#scents" class="text-[#8A9A5B] hover:text-[#6B7F4A] block px-3 py-2 text-base font-medium">Ambientações</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section pt-20 min-h-screen flex items-center justify-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+            <div class="fade-in">
+                <h1 class="text-5xl md:text-7xl font-bold text-[#8A9A5B] mb-6">Ilumine sua essência</h1>
+                <p class="text-xl md:text-2xl text-[#5A5A5A] mb-10 max-w-3xl mx-auto">Velas aromáticas artesanais que transformam ambientes e acendem emoções</p>
+                <a href="#products" class="bg-[#8A9A5B] hover:bg-[#6B7F4A] text-white font-medium py-3 px-8 rounded-full text-lg transition duration-300 inline-block">Conheça nossos produtos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-[#8A9A5B] mb-4">Sobre a Auréola Essencial</h2>
+                <div class="w-24 h-1 bg-[#D4B483] mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Processo artesanal" class="rounded-lg shadow-lg w-full h-auto">
+                </div>
+                <div class="fade-in">
+                    <h3 class="text-3xl font-semibold text-[#8A9A5B] mb-6">Artesanato com propósito</h3>
+                    <p class="text-lg mb-6">Cada vela Auréola Essencial é cuidadosamente elaborada à mão, utilizando cera de coco sustentável e óleos essenciais 100% naturais. Nosso processo respeita o tempo da natureza e valoriza a autenticidade do trabalho manual.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="flex items-center justify-center h-6 w-6 rounded-full bg-[#D4B483] text-white">
+                                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <p class="ml-3 text-lg">Ingredientes naturais e sustentáveis</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="flex items-center justify-center h-6 w-6 rounded-full bg-[#D4B483] text-white">
+                                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <p class="ml-3 text-lg">Produção artesanal em pequenos lotes</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="flex items-center justify-center h-6 w-6 rounded-full bg-[#D4B483] text-white">
+                                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <p class="ml-3 text-lg">Embalagens ecológicas e recicláveis</p>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20as%20velas%20Auréola%20Essencial" class="mt-8 inline-flex items-center bg-[#8A9A5B] hover:bg-[#6B7F4A] text-white font-medium py-3 px-6 rounded-full text-lg transition duration-300">
+                        <i class="fab fa-whatsapp mr-2 text-xl"></i> Fale conosco
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-[#F5F5F0]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-[#8A9A5B] mb-4">Nossas Velas</h2>
+                <p class="text-xl text-[#5A5A5A] max-w-3xl mx-auto">Descubra nossa coleção de velas aromáticas criadas para transformar seus momentos</p>
+                <div class="w-24 h-1 bg-[#D4B483] mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 fade-in">
+                    <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Vela Lavanda" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-[#8A9A5B] mb-2">Serenidade de Lavanda</h3>
+                        <p class="text-[#5A5A5A] mb-4">Acalma a mente e prepara o corpo para um sono reparador com esta harmoniosa mistura de lavanda francesa e camomila.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-medium text-[#8A9A5B]">R$ 89,90</span>
+                            <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20encomendar%20a%20vela%20Serenidade%20de%20Lavanda" class="bg-[#8A9A5B] hover:bg-[#6B7F4A] text-white font-medium py-2 px-4 rounded-full text-sm transition duration-300">
+                                <i class="fab fa-whatsapp mr-1"></i> Encomendar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 fade-in">
+                    <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="Vela Citrus" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-[#8A9A5B] mb-2">Energia Citrus</h3>
+                        <p class="text-[#5A5A5A] mb-4">Uma explosão revigorante de laranja doce, toranja e limão siciliano para trazer luz e vitalidade ao seu dia.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-medium text-[#8A9A5B]">R$ 79,90</span>
+                            <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20encomendar%20a%20vela%20Energia%20Citrus" class="bg-[#8A9A5B] hover:bg-[#6B7F4A] text-white font-medium py-2 px-4 rounded-full text-sm transition duration-300">
+                                <i class="fab fa-whatsapp mr-1"></i> Encomendar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 fade-in">
+                    <img src="https://images.unsplash.com/photo-1631729371254-43c28953e606?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Vela Baunilha" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-[#8A9A5B] mb-2">Conforto de Baunilha</h3>
+                        <p class="text-[#5A5A5A] mb-4">A doçura reconfortante da baunilha de Madagascar combinada com notas suaves de caramelo e âmbar.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-medium text-[#8A9A5B]">R$ 85,90</span>
+                            <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20encomendar%20a%20vela%20Conforto%20de%20Baunilha" class="bg-[#8A9A5B] hover:bg-[#6B7F4A] text-white font-medium py-2 px-4 rounded-full text-sm transition duration-300">
+                                <i class="fab fa-whatsapp mr-1"></i> Encomendar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 fade-in">
+                    <img src="https://images.unsplash.com/photo-1611773952324-9d4ab5e02cc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Vela Madeira" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-[#8A9A5B] mb-2">Essência de Madeira</h3>
+                        <p class="text-[#5A5A5A] mb-4">Uma composição terrosa de sândalo, cedro e patchouli que traz estabilidade e conexão com a natureza.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-medium text-[#8A9A5B]">R$ 95,90</span>
+                            <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20encomendar%20a%20vela%20Essência%20de%20Madeira" class="bg-[#8A9A5B] hover:bg-[#6B7F4A] text-white font-medium py-2 px-4 rounded-full text-sm transition duration-300">
+                                <i class="fab fa-whatsapp mr-1"></i> Encomendar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 fade-in">
+                    <img src="https://images.unsplash.com/photo-1618932260643-eee4a2f652a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Vela Floral" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-[#8A9A5B] mb-2">Jardim Secreto</h3>
+                        <p class="text-[#5A5A5A] mb-4">Uma sinfonia floral de jasmim, rosa e lírio do vale que transporta para campos floridos na primavera.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-medium text-[#8A9A5B]">R$ 92,90</span>
+                            <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20encomendar%20a%20vela%20Jardim%20Secreto" class="bg-[#8A9A5B] hover:bg-[#6B7F4A] text-white font-medium py-2 px-4 rounded-full text-sm transition duration-300">
+                                <i class="fab fa-whatsapp mr-1"></i> Encomendar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 fade-in">
+                    <img src="https://images.unsplash.com/photo-1601000938251-a1cf57a6f32f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Vela Especiarias" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-[#8A9A5B] mb-2">Calor de Especiarias</h3>
+                        <p class="text-[#5A5A5A] mb-4">Uma mistura aconchegante de canela, cravo e noz-moscada que lembra os momentos mais acolhedores do inverno.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-medium text-[#8A9A5B]">R$ 87,90</span>
+                            <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20encomendar%20a%20vela%20Calor%20de%20Especiarias" class="bg-[#8A9A5B] hover:bg-[#6B7F4A] text-white font-medium py-2 px-4 rounded-full text-sm transition duration-300">
+                                <i class="fab fa-whatsapp mr-1"></i> Encomendar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 fade-in">
+                <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20Auréola%20Essencial" class="bg-[#8A9A5B] hover:bg-[#6B7F4A] text-white font-medium py-3 px-8 rounded-full text-lg transition duration-300 inline-flex items-center">
+                    <i class="fab fa-whatsapp mr-2 text-xl"></i> Fale conosco no WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-[#8A9A5B] mb-4">O que dizem sobre nós</h2>
+                <div class="w-24 h-1 bg-[#D4B483] mx-auto"></div>
+            </div>
+            
+            <div class="relative overflow-hidden fade-in">
+                <div class="testimonial-carousel flex overflow-x-auto pb-8 scrollbar-hide">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
+                        <div class="bg-[#F5F5F0] p-8 rounded-lg h-full">
+                            <div class="flex items-center mb-4">
+                                <div class="flex-shrink-0">
+                                    <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/32.jpg" alt="Cliente">
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-[#8A9A5B]">Ana Clara</h4>
+                                    <div class="flex text-[#D4B483]">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-[#5A5A5A] italic">"A vela de lavanda transformou minha rotina noturna. A qualidade do aroma é impressionante e a queima é limpa e duradoura. Nunca mais consegui dormir sem acendê-la!"</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
+                        <div class="bg-[#F5F5F0] p-8 rounded-lg h-full">
+                            <div class="flex items-center mb-4">
+                                <div class="flex-shrink-0">
+                                    <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/men/54.jpg" alt="Cliente">
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-[#8A9A5B]">Ricardo</h4>
+                                    <div class="flex text-[#D4B483]">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-[#5A5A5A] italic">"Comprei a Essência de Madeira para o meu home office e foi a melhor decisão. O aroma é sofisticado e ajuda muito na concentração. Já indiquei para vários colegas!"</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
+                        <div class="bg-[#F5F5F0] p-8 rounded-lg h-full">
+                            <div class="flex items-center mb-4">
+                                <div class="flex-shrink-0">
+                                    <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente">
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-[#8A9A5B]">Fernanda</h4>
+                                    <div class="flex text-[#D4B483]">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-[#5A5A5A] italic">"Adoro presentear com as velas Auréola Essencial. Além de lindas, a embalagem sustentável e o cuidado com os ingredientes fazem toda diferença. O atendimento pelo WhatsApp é super ágil!"</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
+                        <div class="bg-[#F5F5F0] p-8 rounded-lg h-full">
+                            <div class="flex items-center mb-4">
+                                <div class="flex-shrink-0">
+                                    <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente">
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-[#8A9A5B]">Juliana</h4>
+                                    <div class="flex text-[#D4B483]">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-[#5A5A5A] italic">"A vela Conforto de Baunilha é perfeita para criar um clima aconchegante em casa. O cheiro é divino e não é enjoativo como outras que já experimentei. Dura muito mais que o esperado!"</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center mt-8 space-x-2">
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-[#D4B483] opacity-50"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-[#D4B483] opacity-50"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-[#D4B483]"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-[#D4B483] opacity-50"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scents Section -->
+    <section id="scents" class="py-20 bg-[#F5F5F0]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-[#8A9A5B] mb-4">Ambientações Aromáticas</h2>
+                <p class="text-xl text-[#5A5A5A] max-w-3xl mx-auto">Descubra como nossos aromas podem transformar seus momentos</p>
+                <div class="w-24 h-1 bg-[#D4B483] mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Scent 1 -->
+                <div class="scent-card bg-white rounded-lg p-8 text-center shadow-md fade-in">
+                    <div class="w-20 h-20 bg-[#F0E7D8] rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-spa text-3xl text-[#8A9A5B]"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-[#8A9A5B] mb-4">Relaxamento</h3>
+                    <p class="text-[#5A5A5A] mb-4">Crie um santuário de paz em sua casa com nossos aromas calmantes que ajudam a reduzir o estresse e preparar o corpo para o descanso.</p>
+                    <p class="text-sm text-[#D4B483] font-medium">Recomendado: Serenidade de Lavanda, Jardim Secreto</p>
+                </div>
+                
+                <!-- Scent 2 -->
+                <div class="scent-card bg-white rounded-lg p-8 text-center shadow-md fade-in">
+                    <div class="w-20 h-20 bg-[#F0E7D8] rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-brain text-3xl text-[#8A9A5B]"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-[#8A9A5B] mb-4">Foco</h3>
+                    <p class="text-[#5A5A5A] mb-4">Aumente sua produtividade e concentração com fragrâncias que estimulam a clareza mental e mantêm a mente alerta.</p>
+                    <p class="text-sm text-[#D4B483] font-medium">Recomendado: Energia Citrus, Essência de Madeira</p>
+                </div>
+                
+                <!-- Scent 3 -->
+                <div class="scent-card bg-white rounded-lg p-8 text-center shadow-md fade-in">
+                    <div class="w-20 h-20 bg-[#F0E7D8] rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-heart text-3xl text-[#8A9A5B]"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-[#8A9A5B] mb-4">Autocuidado</h3>
+                    <p class="text-[#5A5A5A] mb-4">Transforme seu ritual de cuidados pessoais em uma experiência sensorial que nutre corpo e alma.</p>
+                    <p class="text-sm text-[#D4B483] font-medium">Recomendado: Conforto de Baunilha, Calor de Especiarias</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-white rounded-lg p-8 shadow-md fade-in">
+                <div class="text-center">
+                    <h3 class="text-2xl font-semibold text-[#8A9A5B] mb-4">Não sabe qual aroma combina com você?</h3>
+                    <p class="text-[#5A5A5A] mb-6 max-w-2xl mx-auto">Nossos especialistas em aromaterapia podem ajudar a escolher a fragrância perfeita para suas necessidades e preferências.</p>
+                    <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20ajuda%20para%20escolher%20uma%20vela%20Auréola%20Essencial" class="bg-[#8A9A5B] hover:bg-[#6B7F4A] text-white font-medium py-3 px-8 rounded-full text-lg transition duration-300 inline-flex items-center">
+                        <i class="fab fa-whatsapp mr-2 text-xl"></i> Fale com nosso especialista
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <footer class="bg-[#8A9A5B] text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold mb-4">Auréola Essencial</h3>
+                    <p class="mb-4">Velas aromáticas artesanais feitas com ingredientes naturais e muito propósito.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-[#D4B483] text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white hover:text-[#D4B483] text-xl"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white hover:text-[#D4B483] text-xl"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold mb-4">Contato</h3>
+                    <div class="space-y-2">
+                        <p><i class="fas fa-phone-alt mr-2"></i> (11) 99999-9999</p>
+                        <p><i class="fas fa-envelope mr-2"></i> contato@aureolaessencial.com</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i> São Paulo, Brasil</p>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold mb-4">Newsletter</h3>
+                    <p class="mb-4">Receba novidades e promoções especiais.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Seu e-mail" class="px-4 py-2 w-full rounded-l focus:outline-none text-[#5A5A5A]">
+                        <button type="submit" class="bg-[#6B7F4A] hover:bg-[#5A6D3A] px-4 py-2 rounded-r">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-[#6B7F4A] mt-8 pt-8 text-center fade-in">
+                <p>&copy; 2023 Auréola Essencial. Todos os direitos reservados.</p>
+                <div class="mt-2 text-sm">
+                    <a href="#" class="hover:text-[#D4B483]">Política de Privacidade</a> | 
+                    <a href="#" class="hover:text-[#D4B483]">Termos de Serviço</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <div class="fixed bottom-6 right-6 z-50 fade-in">
+        <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20Auréola%20Essencial" class="bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition duration-300">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- Botão Voltar para Home (fixo no canto direito) -->
+    <a href="../index.html" title="Voltar para Home" class="fixed bottom-24 right-6 bg-[#D4B483] hover:bg-[#8A9A5B] text-white rounded-full p-4 shadow-lg flex items-center justify-center z-50 transition-all duration-300">
+        <i class="fas fa-home text-2xl"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Testimonial carousel navigation
+        const carousel = document.querySelector('.testimonial-carousel');
+        const dots = document.querySelectorAll('.testimonial-dot');
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                // Update active dot
+                dots.forEach(d => d.classList.remove('opacity-50'));
+                dot.classList.add('opacity-50');
+                
+                // Scroll to corresponding testimonial
+                const testimonialWidth = document.querySelector('.testimonial-slide').offsetWidth;
+                carousel.scrollTo({
+                    left: testimonialWidth * index,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Fade-in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Initialize elements as invisible
+        fadeElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+        
+        // Check on load and scroll
+        window.addEventListener('load', fadeInOnScroll);
+        window.addEventListener('scroll', fadeInOnScroll);
+    </script>
+</body>
+</html>
