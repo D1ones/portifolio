@@ -5,53 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meus Diplomas</title>
     <link rel="stylesheet" href="estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
-    <div class="intro-animation">
-        <img src="../assets/" alt="" class="intro-animation__logo">
-        <a href="../index.html" class="home-link">HOME</a>
-    </div>
-
-    <header>
-        <h1>Meus Diplomas</h1>
+    <header class="header-diploma">
+        <div class="container">
+            <a href="../index.html" class="logo-diploma" title="Voltar ao portfólio">Diones Sabino</a>
+            <nav class="nav-diploma">
+                <ul>
+                    <li><a href="../index.html#sobre">Sobre</a></li>
+                    <li><a href="../index.html#habilidades">Habilidades</a></li>
+                    <li><a href="../index.html#projetos">Projetos</a></li>
+                    <li><a href="../index.html#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-
     <main>
-        <article class="diplomas">
+        <section class="diplomas-section" data-aos="fade-up">
+            <h1 class="diplomas-title">Meus Diplomas & Certificados</h1>
             <div class="diplomas-container">
                 <figure>
                     <img class="diploma" src="Diones Sabino Da Silva - Curso Hábitos_ da produtividade às metas pessoais - Alura-1.png" alt="Diploma de Hábitos da produtividade às metas pessoais">
                     <figcaption>Curso: Hábitos da Produtividade às Metas Pessoais</figcaption>
                 </figure>
-
                 <figure>
                     <img class="diploma" src="Diones Sabino Da Silva - Curso Praticando lógica de programação_ Challenge Decodificador de Texto - Alura-1.png" alt="Diploma de Praticando lógica de programação">
                     <figcaption>Curso: Praticando Lógica de Programação</figcaption>
                 </figure>
-
                 <figure>
                     <img class="diploma" src="Diones Sabino Da Silva - Curso ChatGPT_ otimizando a qualidade dos resultados - Alura-1.png" alt="Diploma de ChatGPT">
                     <figcaption>Curso: ChatGPT - Otimizando a Qualidade dos Resultados</figcaption>
                 </figure>
-
                 <figure>
                     <img class="diploma" src="Diones Sabino Da Silva - Curso Empreendedorismo_ da ideia ao plano de negócios - Alura.jpg" alt="Diploma de Empreendedorismo">
                     <figcaption>Curso: Empreendedorismo - Da Ideia ao Plano de Negócios</figcaption>
                 </figure>
-
                 <figure>
                     <img class="diploma" src="Diones Sabino Da Silva - Curso Desenvolvimento de carreira_ a demanda do mercado - Alura_page-0001.jpg" alt="Diploma de Desenvolvimento de carreira">
                     <figcaption>Curso: Desenvolvimento de Carreira - A Demanda do Mercado</figcaption>
                 </figure>
-
                 <figure>
                     <img class="diploma" src="Diones Sabino Da Silva - Curso Gestão Ágil_ explorando conceitos da agilidade - Alura.jpg" alt="Diploma de Gestão Ágil">
                    <figcaption>Curso: Gestão Ágil - Explorando Conceitos da Agilidade</figcaption>
                 </figure>
             </div>
-            <p>Estou sempre trabalhando para melhorar minhas habilidades e aprender mais a cada dia!</p>
-        </article>
+            <p class="diplomas-msg">Estou sempre trabalhando para melhorar minhas habilidades e aprender mais a cada dia!</p>
+            <a href="../index.html" class="btn-voltar" data-aos="fade-up">Voltar ao Portfólio</a>
+        </section>
     </main>
-
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init();</script>
 </body>
 </html>
