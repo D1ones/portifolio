@@ -1,69 +1,92 @@
 /* Estilos básicos */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    background: #0a001b;
+    color: #fafeff;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    min-height: 100vh;
 }
 
 header h1 {
     text-align: center;
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 30px;
+    font-size: 2.8rem;
+    color: #2b69fb;
+    margin: 48px 0 40px 0;
+    letter-spacing: 2px;
+    font-weight: 700;
 }
 
 main {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
+    min-height: 60vh;
 }
 
 article.diplomas {
     text-align: center;
-    max-width: 900px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    background: #181a2a;
+    padding: 40px 24px 32px 24px;
+    border-radius: 2rem;
+    box-shadow: 0 0 2rem 0 #2b69fb22;
+    margin: 32px 0 48px 0;
 }
 
 /* Layout das imagens */
 .diplomas-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 32px;
 }
 
 figure {
     margin: 0;
-    text-align: center;
+    background: #23243a;
+    border-radius: 1.2rem;
+    box-shadow: 0 0 1.5rem 0 #2b69fb18;
+    padding: 1.5rem 1rem 1.2rem 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #2b69fb33;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+figure:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 0 2.5rem 0 #2b69fb44;
+    border-color: #2b69fb;
 }
 
 .diploma {
-    width: 300px;
+    width: 100%;
+    max-width: 320px;
     height: auto;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-.diploma:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 0.8rem;
+    border: 1.5px solid #2b69fb33;
+    box-shadow: 0 2px 12px #0002;
+    margin-bottom: 12px;
+    background: #fff;
 }
 
 figcaption {
     margin-top: 10px;
-    font-size: 1rem;
-    color: #666;
+    font-size: 1.08rem;
+    color: #fafeff;
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 /* Mensagem final */
 p {
     font-size: 1.2rem;
-    color: #444;
+    color: #b3c6ff;
     margin-top: 30px;
 }
 
@@ -71,43 +94,169 @@ p {
 .home-link {
     display: inline-block;
     margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1rem;
+    padding: 12px 32px;
+    font-size: 1.1rem;
     font-weight: bold;
-    color: #ffffff;
-    background-color: #2C3E50;
+    color: #fff;
+    background: linear-gradient(90deg, #2b69fb 60%, #0a001b 100%);
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px #2b69fb33;
+    transition: background 0.3s, transform 0.2s, color 0.2s;
+    letter-spacing: 1px;
+    border: none;
 }
 
 .home-link:hover {
-    background-color: #0b42f6;
-    transform: scale(1.05);
+    background: linear-gradient(90deg, #0a001b 0%, #2b69fb 100%);
+    color: #2b69fb;
+    transform: scale(1.06);
+}
+
+/* Estilos do Header e Navegação */
+.header-diploma {
+    width: 100%;
+    background: #181a2a;
+    box-shadow: 0 2px 16px #2b69fb11;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header-diploma .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 24px 18px 24px;
+}
+
+.logo-diploma {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #2b69fb;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+}
+
+.logo-diploma:hover {
+    color: #fff;
+}
+
+.nav-diploma ul {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-diploma a {
+    color: #fafeff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.08rem;
+    transition: color 0.2s;
+}
+
+.nav-diploma a:hover {
+    color: #2b69fb;
+}
+
+/* Títulos e Seções dos Diplomas */
+.diplomas-title {
+    text-align: center;
+    font-size: 2.3rem;
+    color: #2b69fb;
+    margin: 48px 0 40px 0;
+    letter-spacing: 2px;
+    font-weight: 800;
+    font-family: 'Inter', 'Montserrat', Arial, sans-serif;
+}
+
+.diplomas-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #181a2a;
+    padding: 40px 24px 32px 24px;
+    border-radius: 2rem;
+    box-shadow: 0 0 2rem 0 #2b69fb22;
+    margin-top: 32px;
+}
+
+.diplomas-msg {
+    font-size: 1.2rem;
+    color: #b3c6ff;
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Botão Voltar */
+.btn-voltar {
+    display: inline-block;
+    margin: 32px auto 0 auto;
+    padding: 12px 32px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(90deg, #2b69fb 60%, #0a001b 100%);
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px #2b69fb33;
+    transition: background 0.3s, transform 0.2s, color 0.2s;
+    letter-spacing: 1px;
+    border: none;
+    text-align: center;
+}
+
+.btn-voltar:hover {
+    background: linear-gradient(90deg, #0a001b 0%, #2b69fb 100%);
+    color: #2b69fb;
+    transform: scale(1.06);
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
-    .diplomas-container {
+@media (max-width: 900px) {
+    .header-diploma .container {
         flex-direction: column;
+        gap: 12px;
+        padding: 18px 4vw 12px 4vw;
     }
 
-    .diploma {
-        width: 90%;
-        max-width: 400px;
+    .nav-diploma ul {
+        gap: 14px;
     }
 
-    p {
-        font-size: 1.1rem;
+    .diplomas-title {
+        font-size: 1.5rem;
+        margin: 32px 0 24px 0;
+    }
+
+    .diplomas-section {
+        padding: 18px 4vw 18px 4vw;
     }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-    .diploma {
-        width: 40%;
+@media (max-width: 600px) {
+    .header-diploma .container {
+        padding: 10px 2vw 8px 2vw;
     }
 
-    p {
+    .diplomas-title {
         font-size: 1.1rem;
+        margin: 18px 0 12px 0;
+    }
+
+    .diplomas-section {
+        padding: 8px 2vw 8px 2vw;
+    }
+
+    .btn-voltar {
+        padding: 10px 18px;
+        font-size: 1rem;
     }
 }
